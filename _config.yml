@@ -16,7 +16,7 @@ author: Ashley Baldry
 navbar-links:
   About Me: "aboutme"
   Projects: "projects"
-  Cross-Stitch: "/#crosstich"
+  Cross-Stitch: "crosstich"
 #  Resources:
 #    - Beautiful Jekyll: "https://beautifuljekyll.com"
 #    - Learn markdown: "https://www.markdowntutorial.com/"
