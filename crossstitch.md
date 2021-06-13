@@ -1,6 +1,8 @@
 ---
 layout: page
 title: My Cross-Stitch Projects
+css:
+  - /assets/css/crossstitch.css
 ---
 
 <div class="cross-stitch-container">
