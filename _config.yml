@@ -14,6 +14,7 @@ author: Ashley Baldry
 # --- List of links in the navigation bar --- #
 
 navbar-links:
+  Blog: "/"
   About Me: "aboutme"
   Projects: "projects"
   Cross-Stitch: "crossstitch"
