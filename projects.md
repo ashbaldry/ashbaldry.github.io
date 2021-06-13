@@ -2,15 +2,15 @@
 
 ### shinytitle
 
-A shiny extension to manipulate the web brower tab title \[[GitHub](https://github.com/ashbaldry/shinytitle)\] \[[Documentation](ashbaldry.github.io/shinytitle)\]
+A shiny extension to manipulate the web brower tab title \[[GitHub](https://github.com/ashbaldry/shinytitle)\] \[[Documentation](https://ashbaldry.github.io/shinytitle)\]
 
 ### shiny.semantic (Contributor)
 
-Shiny support for the Fomantic UI framework \[[GitHub](https://github.com/Appsilon/shiny.semantic)\]
+Shiny support for the Fomantic UI framework \[[GitHub](https://github.com/Appsilon/shiny.semantic)\] \[[Documentation](https://appsilon.github.io/shiny.semantic/)\]
 
 ### appler
 
-Uses the iTunes Search API to pull data about iTunes and the iOS App Store. \[[GitHub](https://github.com/ashbaldry/appler)\] \[[Documentation](ashbaldry.github.io/appler)\]
+Uses the iTunes Search API to pull data about iTunes and the iOS App Store. \[[GitHub](https://github.com/ashbaldry/appler)\] \[[Documentation](/appler)\]
 
 ## Shiny Applications
 
