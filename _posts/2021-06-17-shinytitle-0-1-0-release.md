@@ -1,9 +1,6 @@
 ---
 layout: post
 title: "{shinytitle}: Change the Browser Tab Title of your Shiny App"
-cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
 tags: [rstats, package, shiny, shinytitle]
 ---
 
