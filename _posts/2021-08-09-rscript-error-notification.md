@@ -5,12 +5,12 @@ tags: [rstats, rscript, error-handling]
 ---
 
 There are several ways to send notifications with R when a scheduled job/process has completed running, but if it errors during that process then we still 
-want to have a notification that the script has been unsuccessful. Normally a scheduled job is set-up by using `Rscript`. Normally if a script is being
+want to have a notification that the script has been unsuccessful. Normally a scheduled job is set-up by using `Rscript`. If a script is being
 scheduled, then it generally should be in a good position to run every time without erroring. However there may be times where this is not the case, for
 example the data from the previous day hasn't updated, the response of an API call has changed, or simply a new edge case has appeared that hasn't previously
 been tested. When this happens the script will exit and the only way to find this out is to actively search the log files to find where the error happened.
 
-Here we will look at a way where if an Rscript errors, then you will get be notified within seconds.
+Here we will look at a way that if an Rscript errors, then you will get notified within seconds.
 
 ## Set-Up
 
@@ -42,9 +42,7 @@ cronR::cron_add(
 
 ### `.Last`
 
-`.Last` is an useful variable. If `.Last` has been assigned a function in the global environment, then when you decide to quit your R session
-then that function will be run before R fully shuts itself down. If you look at the documentation of `quit` by default `runLast`, whether or not
-`.Last` should be executed, is set to to `TRUE`. **However** when running `Rscript` and there is an error, it does not call the `.Last` function 
+`.Last` is an useful variable. If `.Last` has been assigned a function in the global environment, then when you decide to quit your R session, that function will be run before R fully shuts down. If you look at the documentation of `quit` by default `runLast`, whether or not `.Last` should be executed, is set to to `TRUE`. **However** when running `Rscript` and there is an error, it does not call the `.Last` function 
 and therefore the e-mail will not be sent.
 
 To get around this, we can change how errors are handled when run within the scheduled job by changing the error option to enable running the `.Last` function.
@@ -64,7 +62,7 @@ sink(log_file)
 sink(log_file, type = "message")
 ```
 
-To make we close the connection to the log file properly, within the `.Last` function we add the following calls:
+To make sure we close the connection to the log file properly within the `.Last` function we add the following calls:
 
 ```r
 sink()
@@ -74,7 +72,7 @@ sink(type = "message")
 ## E-mail
 
 Finally, we need a way to send the results to the user. For this I have used the [`{blastula}`](https://rstudio.github.io/blastula/index.html) package. Within the
-e-mail, we can include a brief message saying whether or not it has run successfully, and the log file to help diagnose the error.
+e-mail, we can include a brief message saying whether or not the job has run successfully, and the log file to help diagnose the error.
 
 For more about setting up e-mails to send using SMTP, have a read of this `{blastula}` [vignette](https://rstudio.github.io/blastula/articles/sending_using_smtp.html)
 
