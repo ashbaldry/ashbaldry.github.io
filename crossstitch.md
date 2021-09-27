@@ -10,7 +10,7 @@ full-width: true
     <div class="four wide column">
       <div class="ui grey segment">
         <h3>{{ project.title }}</h3>
-        <img class="cross-stitch-photo" src="/assets/img/crossstitch/{{ project.img }}" />
+        <img class="ui centered image cross-stitch-photo" src="/assets/img/crossstitch/{{ project.img }}" />
         <div>Finished: {{ project.completed }}</div>
         <a class="" href="{{ project.url }}">Original Pattern</a>
       </div>
