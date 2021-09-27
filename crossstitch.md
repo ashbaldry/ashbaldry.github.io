@@ -20,3 +20,11 @@ js: assets/js/crossstitch.js
     {% endfor %}
   </div>
 </div>
+
+<div class="ui modal">
+  <div class="header"></div>
+  <div class="content"></div>
+  <div class="actions">
+    <button class="ui grey button">Close</button>
+  </div>
+</div>
