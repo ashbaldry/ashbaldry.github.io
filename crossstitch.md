@@ -13,7 +13,7 @@ js: assets/js/crossstitch.js
       <div class="ui grey segment">
         <h3>{{ project.title }}</h3>
         <img class="ui centered image cross-stitch-photo" src="/assets/img/crossstitch/{{ project.img }}" />
-        <div>Finished: {{ project.completed }}</div>
+        <div>Completed: {{ project.completed }}</div>
         <a class="" href="{{ project.url }}">Original Pattern</a>
       </div>
     </div>
