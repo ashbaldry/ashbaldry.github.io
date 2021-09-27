@@ -4,13 +4,13 @@ title: My Cross-Stitch Projects
 full-width: true
 ---
 
-<div class="ui stackable relaxed grid">
+<div class="ui stackable padded grid">
   <div class="ui row">
     {% for project in site.data.crossstitch %}
     <div class="four wide column">
       <div class="ui blue segment">
         <h3>{{ project.title }}</h3>
-        <img class="" src="/assets/img/crossstitch/{{ project.img }}" />
+        <img class="cross-stitch-photo" src="/assets/img/crossstitch/{{ project.img }}" />
         <div>Finished: {{ project.completed }}</div>
         <a class="" href="{{ project.url }}">Original Pattern</a>
       </div>
