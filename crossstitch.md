@@ -2,18 +2,19 @@
 layout: page
 title: My Cross-Stitch Projects
 full-width: true
-css:
-  - /assets/css/crossstitch.css
 ---
 
-<div class="cross-stitch-container">
-  {% for project in site.data.crossstitch %}
-  <div class="cross-stitch-project">
-    <h3>{{ project.title }}</h3>
-    <a class="" href="{{ project.url }}">
-      <img class="" src="/assets/img/crossstitch/{{ project.img }}" />
-    </a>
-    <div>Finished: {{ project.completed }}</div>
+<div class="ui stackable relaxed grid">
+  <div class="ui row">
+    {% for project in site.data.crossstitch %}
+    <div class="four wide column">
+      <div class="ui blue segment">
+        <h3>{{ project.title }}</h3>
+        <img class="" src="/assets/img/crossstitch/{{ project.img }}" />
+        <div>Finished: {{ project.completed }}</div>
+        <a class="" href="{{ project.url }}">Original Pattern</a>
+      </div>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
