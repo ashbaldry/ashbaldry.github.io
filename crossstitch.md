@@ -3,7 +3,7 @@ layout: page
 title: My Cross-Stitch Projects
 full-width: true
 css: assets/css/crossstitch.css
-js: assets/css/crossstich.js
+js: assets/css/crossstitch.js
 ---
 
 <div class="ui stackable padded grid">
