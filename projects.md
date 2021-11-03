@@ -20,6 +20,10 @@ Uses the iTunes Search API to pull data about iTunes and the iOS App Store. \[[G
 
 ## Shiny Applications
 
+### [Reddit Profile Analysis](https://ashbaldry.shinyapps.io/reddit_analysis/)
+
+Looks at the latest posts made and votes placed and runs some analysis over the latest activity on Reddit. 
+
 ### [Wickham Number](https://ashbaldry.shinyapps.io/wickham-number/)
 
 Calculates the number of packages published you are on CRAN from Hadley Wickham (or any other CRAN contributor).
