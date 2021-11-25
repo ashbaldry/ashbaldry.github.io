@@ -15,7 +15,7 @@ I was one of the maintainers included in the recipient list, as my package [`{ap
 Although this is just one package and one dependency, it is certainly not the only situation. So the next step is: How to make it easier to search for these dependencies which can be removed? Introducing [`{depcheck}`](https://github.com/ashbaldry/depcheck), a package that will check the dependencies of a package, and will flag any package that could be looked into, either to copy over the used functions, or remove entirely from the package. Several advantages of dependency reduction include:
 
 - **Increased stability** - Every new dependency introduced into a project creates one more opportunity for a breaking change to be introduced in the future. By copying the one or two functions you require into your package, you have greater control of the code, and less likely to see unexpected errors.
-- **Speed improvements** - Each package being loaded into the R session adds time, and if you have several packages that aren't necessary, or they contain a lot of dependencies, this can quickly accumulate. This is particularly important when building shiny applications, where reducing the initial load time can improve the user experience.
+- **Speed improvements** - Each package being loaded into the R session adds time, and if you have several packages that aren't necessary, or they contain a lot of dependencies, this can quickly accumulate. This is particularly important when building shiny applications, where reducing the initial load time improves the user experience.
 - **Function masking** (or a lack of) - With fewer packages loaded into the R session, you are less likely to have multiple packages with conflicting function names.
 
 ## Using `{depcheck}`
@@ -28,11 +28,11 @@ Currently there are 3 ways to check package dependency usage:
 
 The result of all of these is a list, where the names are the dependent packages. Each item in the list contains a `data.frame` of all the exported functions in the package and the frequency of use. When printed, it will display the number of dependencies in the project, as well as the number of sub-dependencies, and if any of them should be looked into for potential removal. This should also make it a lot easier to find dependencies that you aren't entirely where and how they are used.
 
-**NB** As of writing this, `{depcheck}` is in an experimental phase; function names and/or arguments may change from what is currently in this blog post.
+**NB** As of writing this, `{depcheck}` is in an experimental phase; function names and/or arguments may change from those stated above.
 
 ### Example
 
-I have run `checkShinyDependencyUse()` on one of my own shiny applications, the (Reddit Profile Analyzer)[https://ashbaldry.shinyapps.io/reddit_analysis/], to see how well I am utilising the packages I am using.
+I have run `checkShinyDependencyUse()` on one of my own shiny applications, the (Reddit Profile Analyzer)[https://ashbaldry.shinyapps.io/reddit_analysis/], to see how well I am utilising the packages I have used.
 
 ```r
 project_dependencies <- checkShinyDependencyUse("../reddit-analysis-app") # ashbaldry/reddit-analysis-app
@@ -45,7 +45,7 @@ summary(project_dependencies)
 # Print individual package summaries to check if packages can be removed
 ```
 
-Clearly, there are potential improvements that can be made, 4 packages have been flagged for low use. To look further into a couple of these packages:
+Clearly, there are potential improvements that can be made, 4 packages have been flagged for low use. Looking further into a couple of these packages:
 
 ```r
 project_dependencies$stringi
