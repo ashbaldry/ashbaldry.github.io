@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Cross-Stitch Projects
+title: Projects
 full-width: true
 css: assets/css/crossstitch.css
 ---
