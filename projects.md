@@ -1,6 +1,11 @@
-## Projects
+---
+layout: page
+title: My Cross-Stitch Projects
+full-width: true
+css: assets/css/crossstitch.css
+---
 
-## Packages
+<h2>Packages</h2>
 
 ### `shinytitle`
 
@@ -18,16 +23,19 @@ Shiny support for the Fomantic UI framework \[[GitHub](https://github.com/Appsil
 
 Uses the iTunes Search API to pull data about iTunes and the iOS App Store. \[[GitHub](https://github.com/ashbaldry/appler)\] \[[Documentation](/appler)\]
 
-## Shiny Applications
-
-### [Reddit Profile Analyser](https://ashbaldry.shinyapps.io/reddit_analysis/)
-
-Looks at the latest posts made and votes placed and runs some analysis over the latest activity on Reddit. 
-
-### [Wickham Number](https://ashbaldry.shinyapps.io/wickham-number/)
-
-Calculates the number of packages published you are on CRAN from Hadley Wickham (or any other CRAN contributor).
-
-### [Pokémon 20 Questions](https://ashbaldry.shinyapps.io/Pokemon_20Q/)
-
-A 20 questions game based on the Pokémon from Generations 1-6.
+<h2>Shiny Applications</h2>
+  <div class="ui four cards">
+    {% for project in site.data.shinyapps %}
+    <div class="ui card">
+      <div class="image">
+        <a class="" href="{{ project.url }}" target = "_blank">
+          <img class="cross-stitch-photo" src="/assets/img/shinyapps/{{ project.img }}" />
+        </a>
+      </div>
+      <div class="content">
+        <div class="header">{{ project.title }}</div>
+        <div class="description">{{ project.description }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>

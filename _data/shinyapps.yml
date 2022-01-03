@@ -1,0 +1,12 @@
+- title: Reddit Profile Analyser
+  url: https://ashbaldry.shinyapps.io/reddit_analysis/
+  img: reddit_analysis.jpeg
+  description: Looks at the latest posts made and votes placed and runs some analysis over the latest activity on Reddit. 
+- title: Wickham Number
+  url: https://ashbaldry.shinyapps.io/wickham-number/
+  img: wickham_number.jpeg
+  description: Calculates the number of packages published you are on CRAN from Hadley Wickham (or any other CRAN contributor).
+- title: Pokémon 20 Questions
+  url: https://ashbaldry.shinyapps.io/Pokemon_20Q/
+  img: pokemon_20q.jpeg
+  description: A 20 questions game based on the Pokémon from Generations 1-6.
