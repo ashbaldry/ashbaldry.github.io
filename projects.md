@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-full-width: false
+full-width: true
 ---
 
 <h2>Packages</h2>
@@ -23,7 +23,7 @@ Shiny support for the Fomantic UI framework \[[GitHub](https://github.com/Appsil
 Uses the iTunes Search API to pull data about iTunes and the iOS App Store. \[[GitHub](https://github.com/ashbaldry/appler)\] \[[Documentation](/appler)\]
 
 <h2>Shiny Applications</h2>
-  <div class="ui three stackable cards">
+  <div class="ui four stackable centered cards">
     {% for project in site.data.shinyapps %}
     <div class="ui blue card">
       <div class="image">
