@@ -26,7 +26,7 @@ Uses the iTunes Search API to pull data about iTunes and the iOS App Store. \[[G
 <h2>Shiny Applications</h2>
   <div class="ui four cards">
     {% for project in site.data.shinyapps %}
-    <div class="ui card">
+    <div class="ui blue card">
       <div class="image">
         <a class="" href="{{ project.url }}" target = "_blank">
           <img class="cross-stitch-photo" src="/assets/img/shinyapps/{{ project.img }}" />
