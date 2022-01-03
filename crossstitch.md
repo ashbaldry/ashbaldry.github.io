@@ -6,23 +6,19 @@ css: assets/css/crossstitch.css
 js: assets/js/crossstitch.js
 ---
 
-<div class="ui four stackable centered cards">
-  {% for project in site.data.crossstitch %}
-  <div class="ui grey card">
-    <div class="image">
-      <a class="cross-stitch-photo" href="{{ project.url }}">
-        <img src="/assets/img/crossstitch/{{ project.img }}" />
-      </a>
-    </div>
-    <div class="content">
-      <div class="header">{{ project.title }}</div>
-      <div class="description">
-        Completed: {{ project.completed }}
+<div class="ui stackable padded grid">
+  <div class="ui row">
+    {% for project in site.data.crossstitch %}
+    <div class="four wide column">
+      <div class="ui grey segment">
+        <h3>{{ project.title }}</h3>
+        <img class="ui centered image cross-stitch-photo" src="/assets/img/crossstitch/{{ project.img }}" />
+        <div>Completed: {{ project.completed }}</div>
         <a class="" href="{{ project.url }}">Original Pattern</a>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
 
 <div class="ui modal">
