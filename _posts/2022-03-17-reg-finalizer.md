@@ -4,7 +4,7 @@ title: "Closing Database Connections in R Packages"
 tags: [rstats, databases, package development]
 ---
 
-When writing R scripts that involve connecting to a database, it is easy enough to set up the connection at the start of the script (`dbConnect`), do all of the required queries (`dbGetQuery`, `dbWriteTable` etc.) and then at the end of the script close the connection (`dbDisconnect`) without much of an issue (except from finding the missing bracket in the connection string).
+When writing R scripts that involve connecting to a database, it is relatively simple to set up the connection at the start of the script (`dbConnect`), do all of the required queries (`dbGetQuery`, `dbWriteTable` etc.) and then at the end of the script close the connection (`dbDisconnect`) without much of an issue (except from finding the missing bracket in the connection string).
 
 However, when writing a package that deals with connecting to a specific database, you want to make it as easy as possible to access and use the database. There might be a wrapper for `dbConnect` so users only need their credentials to connect, avoiding copy and pasting the connection string across every project. We are also all prone to forgetting to include the disconnection at the end of the script, therefore you might want to handle the whole connect/disconnect process, leaving one fewer thing for the user to remember.
 
@@ -81,7 +81,7 @@ writeDBTable <- function(name, value, ...) {
 
 ### Adding `reg.finalizer`
 
-The package is now in a state to allow users to interact with the database, however it will create a lot of unclosed connections. Here is where `reg.finalizer` comes into use; we will add this to a couple of internal functions that are called when the package is either loaded or unloaded: `.onLoad` and `.onUnload`.
+The package is now in a state to allow users to interact with the database, however it will create a lot of unclosed connections. This is where `reg.finalizer` comes into use; we will add this to a couple of internal functions that are called when the package is either loaded or unloaded: `.onLoad` and `.onUnload`.
 
 `.onLoad` enables the disconnection function to be registered to the database environment, so the handler to close the connection is set up before the user has even tried to connect. In the event that the package is unloaded for any reason that isn't a session restart, we also use `.onUnload` to disconnect. We want to make sure that all connections are safely and properly disconnected.
 
@@ -115,11 +115,11 @@ The process is now set up! People are now free to access the database without ha
 
 ## Multiple Connections
 
-Of course, you might include multiple connections in a package and want to handle them correctly. It might be a couple of specific connections that can be given predetermined names, or it might be more dynamic and the connection depends on the database name. In either case, we can slightly adapt the `closeConnection` to handle any number of connections by using `ls` to list all connections established in the package.
+Of course, you might require connections to multiple databases, and want to store the different connections in the same package. It might be a couple of specific connections that can be given predetermined names, or it might be more dynamic and the connection depends on the database name. In either case, we can slightly adapt the `closeConnection` to handle any number of connections by using `ls` to list all connections established in the package.
 
 ```r
 # R/zzz.R
-closeConnections <- function(e, conn_name = "conn") {
+closeConnections <- function(e) {
   for (conn_name in ls(e)) {
     conn <- get(conn_name, envir = e)
     if (DBI::dbIsValid(conn)) {
@@ -145,10 +145,10 @@ closeConnections <- function(e, conn_name = "conn") {
 
 Although `.Last` applies to scripts more than packages, it is still worth mentioning here.
 
-Setting up automated scripts that involve calls to databases can break due to an unexpected error, and therefore the connection to the database may not successfully close. Similar to an [earlier post on sending notifications on errors](https://ashbaldry.github.io/2021-08-09-rscript-error-notification/), the `dbDisconnect` function can be added to the `.Last` function to ensure that even when a script fails to run, it still closes the connection.
+Setting up automated scripts that involve calls to databases may break due to an unexpected error. This will terminate the R process without closing the connection to the database. Similar to an [earlier post on sending notifications on errors](https://ashbaldry.github.io/2021-08-09-rscript-error-notification/), the `dbDisconnect` function can be added within the `.Last` function to ensure that even when a script fails to run, the connection is still closed.
 
 ```r
-conn <- dbConnect()
+conn <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
 
 .Last <- function() {
   if (DBI::dbIsValid(conn)) {
