@@ -549,6 +549,12 @@ footer .footer-custom-content {
   }
 }
 
+/* --- Blog Links --- */
+
+.blog-blogroll {
+  margin-top: 1.25rem;
+}
+
 /* --- Tags --- */
 
 .blog-tags {
