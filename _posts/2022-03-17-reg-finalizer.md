@@ -10,7 +10,7 @@ However, when writing a package that deals with connecting to a specific databas
 
 ## `reg.finalizer`
 
-`reg.finalizer` is a base R function that calls a function either during garbage collection or, in this case, at the end of an `R` session. It runs separately to `.Last` and therefore won't disrupt any other process that is run. It takes three arguments:
+[`reg.finalizer`](https://rdrr.io/r/base/reg.finalizer.html) is a base R function that calls a function either during garbage collection or, in this case, at the end of an `R` session. It runs separately to `.Last` and therefore won't disrupt any other process that is run. It takes three arguments:
 
 - `e` An environment e.g. `.GlobalEnv` or an external pointer
 - `f` A function with a single argument - the environment/external pointer - to run at the end of a session
