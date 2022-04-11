@@ -275,7 +275,7 @@
     </a>
   </li>
 {%- endif -%}
-  
+
 {%- if site.social-network-links.medium -%}
   <li class="list-inline-item">
     <a href="https://medium.com/@{{ site.social-network-links.medium }}" title="Medium">
@@ -299,7 +299,7 @@
    </a>
   </li>
 {%- endif -%}
-  
+
 {%- if site.social-network-links.discord -%}
   <li class="list-inline-item">
     <a href="https://discord.com/{{ site.social-network-links.discord }}" title="Discord">
@@ -308,6 +308,18 @@
         <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
       </span>
       <span class="sr-only">Discord</span>
+   </a>
+  </li>
+{%- endif -%}
+
+{%- if site.social-network-links.kaggle -%}
+  <li class="list-inline-item">
+    <a href="https://www.kaggle.com/{{ site.social-network-links.kaggle }}" title="Kaggle">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Kaggle</span>
    </a>
   </li>
 {%- endif -%}
