@@ -6,6 +6,10 @@ full-width: true
 
 <h2>Packages</h2>
 
+### `designer`
+
+A shinypackage that enables the ability to create shiny UI code by drag and dropping HTML components within a shiny application \[[GitHub](https://github.com/ashbaldry/designer)\] \[[Documentation](https://ashbaldry.github.io/designer)\]
+
 ### `shinytitle`
 
 A shiny extension to manipulate the web brower tab title \[[GitHub](https://github.com/ashbaldry/shinytitle)\] \[[Documentation](https://ashbaldry.github.io/shinytitle)\]
