@@ -8,7 +8,7 @@ layout: null
     <title>{{ "Ashley's Blog" | xml_escape }}</title>
     {% endif %}
     {% if site.rss-description %}
-    <description>{{ "RSS feed especialy for R-bloggers" | xml_escape }}</description>
+    <description>{{ "RSS feed specifically for R-bloggers" | xml_escape }}</description>
     {% endif %}
     <link>{{ '' | absolute_url }}</link>
     <atom:link href="{{ 'feed.xml' | absolute_url }}" rel="self" type="application/rss+xml" />
