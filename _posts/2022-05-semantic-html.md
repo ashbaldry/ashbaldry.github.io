@@ -25,7 +25,9 @@ Trade-offs are bound to occur; these more well known frameworks have been update
 You don't need to use a classless framework to make it more semantic. Simply by changing the `&lt;div&gt;` and `&lt;span&gt;` tags within your existing framework is sometimes enough. Because most styling is attached to the classes rather than the components, changing these tags will not affect the UI but will make the web page more accessible.
 
 <figure>
+
 ![Comparison](assets/semantic_div_comp.jpeg)
+
 <figcaption>
 Both of these UIs are using the same classes, one with `&lt;div&gt;` elements and the other with Semantic HTML<sup>[3]</sup>.
 </figcaption>
