@@ -4,7 +4,7 @@ title: "Semantic HTML and Shiny Applications"
 tags: [rstats, shiny, html]
 ---
 
-A couple of weeks ago I was looking around for different CSS frameworks to play around with, and came across *Semantic HTML* (**not** to be confused with [Semantic UI](https://semantic-ui.com/)) and I'm hooked. There are several "classless CSS frameworks" that are implemented under the ideology of Semantic HTML: styling of elements (e.g. height and colour) is applied to the HTML tags rather than classes, meaning that the HTML is less of a sea of `&lt;div&gt;` and `&lt;span&gt;` tags with 6-7 classes, and more of a wider range of HTML tags that better explain what is contained in the web page.
+A couple of weeks ago I was looking around for different CSS frameworks to play around with, and came across *Semantic HTML* (**not** to be confused with [Semantic UI](https://semantic-ui.com/)) and I'm hooked. There are several "classless CSS frameworks" that are implemented under the ideology of Semantic HTML: styling of elements (e.g. height and colour) is applied to the HTML tags rather than classes, meaning that the HTML is less of a sea of <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags with 6-7 classes, and more of a wider range of HTML tags that better explain what is contained in the web page.
 
 Some examples include:
 
@@ -22,14 +22,14 @@ There is also a file size advantage using classless frameworks over the highly u
 
 Trade-offs are bound to occur; these more well known frameworks have been updated and iterated on for years, and include many components and features that won't be available in these classless frameworks, making it much quicker to build an application without writing any extra CSS. They have also been including more accessibility features by using <abbr title="Accessible Rich Internet Applications">ARIA</abbr> attributes (a list of all attributes are available on [Mozilla Web Docs](https://developer.mozilla.org/en-US/docs/web/Accessibility/ARIA/Attributes)), they provide enhanced accessibility compared to Semantic HTML.
 
-You don't need to use a classless framework to make it more semantic. Simply by changing the `&lt;div&gt;` and `&lt;span&gt;` tags within your existing framework is sometimes enough. Because most styling is attached to the classes rather than the components, changing these tags will not affect the UI but will make the web page more accessible.
+You don't need to use a classless framework to make it more semantic. Simply by changing the <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags within your existing framework is sometimes enough. Because most styling is attached to the classes rather than the components, changing these tags will not affect the UI but will make the web page more accessible.
 
 <figure>
 
 ![Comparison](assets/semantic_div_comp.jpeg)
 
 <figcaption>
-Both of these UIs are using the same classes, one with `&lt;div&gt;` elements and the other with Semantic HTML<sup>3</sup>.
+Both of these UIs are using the same classes, one with <code>&lt;div&gt;</code> elements and the other with Semantic HTML<sup>3</sup>.
 </figcaption>
 </figure>
 
@@ -39,26 +39,26 @@ Here are a few simple changes that can be applied to any `{shiny}` application t
 
 <dl>
 <dt>
-When to use `&lt;strong&gt;` and `&lt;em&gt;` instead of `&lt;b&gt;` and `&lt;i&gt;`
+When to use <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> instead of <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code>
 </dt>
 <dd>
-These pairs might look interchangeable in the UI of the web page, however they a screen reader will read both of these differently. Whilst `&lt;b&gt;` and `&lt;i&gt;` look bold and italicized, the screen reader will pronounce as if it is standard text (and is now recommended to use the `font-weight` style instead of `&lt;b&gt;`). `&lt;strong&gt;` and `&lt;em&gt;` are recognised by the screen reader and will emphasize accordingly.
+These pairs might look interchangeable in the UI of the web page, however they a screen reader will read both of these differently. Whilst <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> look bold and italicized, the screen reader will pronounce as if it is standard text (and is now recommended to use the `font-weight` style instead of <code>&lt;b&gt;</code>). <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> are recognised by the screen reader and will emphasize accordingly.
 
 Try using screen reader on <b>this</b> sentence and work out which <strong>this</strong> is strong and which is b. 
 </dd>
 <dt>
-`&lt;output&gt;` for outputs
+<code>&lt;output&gt;</code> for outputs
 </dt>
 <dd>
-`&lt;output&gt;` is a container which injects the results of a calculation or a user action. This is exactly what all of the output functions are doing in your UI. Certain functions, such as `textOutput`, contain a parameter `container` that enables you to choose the HTML tag to use (by default it is `&lt;div&gt;` or `&lt;span&gt;` depending on whether or not the output has been specified to be inline).
+<code>&lt;output&gt;</code> is a container which injects the results of a calculation or a user action. This is exactly what all of the output functions are doing in your UI. Certain functions, such as `textOutput`, contain a parameter `container` that enables you to choose the HTML tag to use (by default it is <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> depending on whether or not the output has been specified to be inline).
 
-Other outputs, such as plots or tables, can be wrapped within one of these `&lt;output&gt;` tags so that the user can differentiate between images that are shown on application load, and images that are generated by selecting different options.
+Other outputs, such as plots or tables, can be wrapped within one of these <code>&lt;output&gt;</code> tags so that the user can differentiate between images that are shown on application load, and images that are generated by selecting different options.
 </dd>
 <dt>
-`&lt;figure&gt;` and `&lt;figcaption&gt;` for images
+<code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> for images
 </dt>
 <dd>
-Whilst you can simply add a new paragraph under an image, table, or even a quote, by using `&lt;figure&gt;` and `&lt;figcaption&gt;` you can more explicitly link the caption to the component. It might look like they are linked styling several `&lt;div&gt;`s, but this will let the screen reader better know that the caption is describing the figure.
+Whilst you can simply add a new paragraph under an image, table, or even a quote, by using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> you can more explicitly link the caption to the component. It might look like they are linked styling several <code>&lt;div&gt;</code>s, but this will let the screen reader better know that the caption is describing the figure.
 
 ```
 tags$figure(
@@ -68,10 +68,10 @@ tags$figure(
 ```
 </dd>
 <dt>
-`&lt;abbr&gt;` for abbreviations and acronyms
+<code>&lt;abbr&gt;</code> for abbreviations and acronyms
 </dt>
 <dd>
-Know what either <abbr title="Self-Contained Underwater Breathing Apparatus">SCUBA</abbr> or <abbr title="Completely Automated Public Turing Test to tell Computers and Humans Apart">CAPTCHA</abbr> mean? Me neither, and dashboards can be full of acronyms users might be unaware of. Using `&lt;abbr title="longhand"&gt;` will include a tooltip of the longhand of the acronyms, making it easier to keep track of them.
+Know what either <abbr title="Self-Contained Underwater Breathing Apparatus">SCUBA</abbr> or <abbr title="Completely Automated Public Turing Test to tell Computers and Humans Apart">CAPTCHA</abbr> mean? Me neither, and dashboards can be full of acronyms users might be unaware of. Using <code>&lt;abbr title="longhand"&gt;</code> will include a tooltip of the longhand of the acronyms, making it easier to keep track of them.
 </dd>
 </dl>
 
@@ -81,22 +81,22 @@ Whilst writing this post, I found out about a load of HTML tags that I've never 
 
 <dl>
 <dt>
-`&lt;kbd&gt;`
+<code>&lt;kbd&gt;</code>
 </dt>
 <dd>
 A piece of inline text denoting an input required from a keyboard <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>
 </dd>
 <dt>
-`&lt;dl&gt;`, `&lt;dt&gt;` and `&lt;dl&gt;`
+<code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> and <code>&lt;dl&gt;</code>
 </dt>
 <dd>
-These work in a similar fashion to `&lt;ul&gt;` and `&lt;ol&gt;` to create a descriptive list. Unlike the aforementioned, there are no bullet points, but each item includes a term `&lt;dt&gt;`, and the description `&lt;dd&gt;` can refer to one or several terms. The lists in the blog post are all using these tags!
+These work in a similar fashion to <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> to create a descriptive list. Unlike the aforementioned, there are no bullet points, but each item includes a term <code>&lt;dt&gt;</code>, and the description <code>&lt;dd&gt;</code> can refer to one or several terms. The lists in the blog post are all using these tags!
 </dd>
 <dt>
-`&lt;form&gt;`, `&lt;fieldset&gt;` and `&lt;legend&gt;`
+<code>&lt;form&gt;</code>, <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code>
 </dt>
 <dd>
-These tags are great for creating a semantic section of inputs within an application. Separate the sections of an input form with `&lt;fieldset&gt;`s, each with the first element with a legend. These work really nicely as part of `shiny::sidebarPanel` as this wraps all contents within a `&lt;form&gt;`.
+These tags are great for creating a semantic section of inputs within an application. Separate the sections of an input form with <code>&lt;fieldset&gt;</code>s, each with the first element with a legend. These work really nicely as part of `shiny::sidebarPanel` as this wraps all contents within a <code>&lt;form&gt;</code>.
 
 ```
 tags$form(
@@ -123,5 +123,5 @@ For a list of all HTML tags available with definitions and examples, have a look
 
 [2] [UX Stack Exchange - Percentage of screen readers users in USA?](https://ux.stackexchange.com/a/119596/157481)
 
-[3] The left is full of `&lt;div&gt;`, the right is using Semantic HTML
+[3] The left is full of <code>&lt;div&gt;</code>, the right is using Semantic HTML
 </footer>
