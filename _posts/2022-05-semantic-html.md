@@ -95,6 +95,7 @@ These work in a similar fashion to `&lt;ul&gt;` and `&lt;ol&gt;` to create a des
 </dt>
 <dd>
 These tags are great for creating a semantic section of inputs within an application. Separate the sections of an input form with `&lt;fieldset&gt;`s, each with the first element with a legend. These work really nicely as part of `shiny::sidebarPanel` as this wraps all contents within a `&lt;form&gt;`.
+
 ```
 tags$form(
   class = "well", # Adds the same styling as shiny::sidebarPanel
