@@ -62,7 +62,7 @@ Whilst you can simply add a new paragraph under an image, table, or even a quote
 
 ```
 tags$figure(
-  # Add inputs here e.g. imageOutput() or DTO
+  # Add inputs here e.g. imageOutput() or DTOutput()
   tags$figcaption("Caption")
 )
 ```
