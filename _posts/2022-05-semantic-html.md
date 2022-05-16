@@ -110,7 +110,7 @@ tags$form(
 )
 ```
 
-![Example form using form, fieldset and legend HTML tags](assets/form_tags.jpeg)
+![Example form using form, fieldset and legend HTML tags](_posts/assets/form_tags.jpeg)
 </dd>
 </dl>
 
