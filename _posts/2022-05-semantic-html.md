@@ -29,7 +29,7 @@ You don't need to use a classless framework to make it more semantic. Simply by 
 ![Comparison](assets/semantic_div_comp.jpeg)
 
 <figcaption>
-Both of these UIs are using the same classes, one with `&lt;div&gt;` elements and the other with Semantic HTML<sup>[3]</sup>.
+Both of these UIs are using the same classes, one with `&lt;div&gt;` elements and the other with Semantic HTML<sup>3</sup>.
 </figcaption>
 </figure>
 
@@ -120,6 +120,8 @@ For a list of all HTML tags available with definitions and examples, have a look
 
 <footer>
 [1] [US Blindness Statistics](https://nfb.org/blindness-statistics)
+
 [2] [UX Stack Exchange - Percentage of screen readers users in USA?](https://ux.stackexchange.com/a/119596/157481)
+
 [3] The left is full of `&lt;div&gt;`, the right is using Semantic HTML
 </footer>
