@@ -21,9 +21,7 @@ full-width: true
     </div>
     {% endfor %}
   </div>
-</section>
-
-<section>
+  
   <h2>Packages</h2>
   <div class="ui four stackable centered cards">
     {% for package in site.data.packages %}
