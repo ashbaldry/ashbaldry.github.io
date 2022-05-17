@@ -77,6 +77,7 @@ Know what either <abbr title="Self-Contained Underwater Breathing Apparatus">SCU
 Using &lt;h1&gt; to &lt;h6&gt; in hierarchical order
 </dt>
 <dd>
+
 I always fall foul of this particular issue; I will use whichever header tag I like best, whether or not it is in the correct order. [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a great tool to measure website accessibility, and one of the things it checks is that web pages use headers in the correct order to help better structure the page, meaning you shouldn't skip levels just because &lt;h4&gt; looks nicer than &lt;h2&gt;. Instead copy the style of the headers you want to use and assign them to h1, h2 and h3 in a CSS file so that you adhere to this rule.
 </dd>
 </dl>
