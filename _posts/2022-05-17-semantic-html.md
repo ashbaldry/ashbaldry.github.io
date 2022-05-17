@@ -24,7 +24,7 @@ Trade-offs are bound to occur; the more well known frameworks have been updated 
 
 You don't need to use a classless framework to make it more semantic. Simply by changing the <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags within your existing framework is sometimes enough. Because most styling is attached to the classes rather than the components, changing these tags will not affect the UI but will make the web page more accessible.
 
-![Comparison](./assets/semantic_div_comp.jpeg)
+![Comparison](/assets/img/blog/semantic-html/semantic_div_comp.jpeg)
 
 Both of these UIs are using the same classes, one with <code>&lt;div&gt;</code> elements and the other with Semantic HTML<sup>3</sup>.
 
@@ -122,7 +122,7 @@ tags$form(
 </dd>
 </dl>
 
-![Example form using form, fieldset and legend HTML tags](assets/form_tags.jpeg)
+![Example form using form, fieldset and legend HTML tags](/assets/img/blog/semantic-html/form_tags.jpeg)
 
 For a list of all HTML tags available with definitions and examples, have a look at this [Mozilla Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) article.
 
