@@ -24,14 +24,9 @@ Trade-offs are bound to occur; the more well known frameworks have been updated 
 
 You don't need to use a classless framework to make it more semantic. Simply by changing the <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags within your existing framework is sometimes enough. Because most styling is attached to the classes rather than the components, changing these tags will not affect the UI but will make the web page more accessible.
 
-<figure>
-
 ![Comparison](assets/semantic_div_comp.jpeg)
 
-<figcaption>
 Both of these UIs are using the same classes, one with <code>&lt;div&gt;</code> elements and the other with Semantic HTML<sup>3</sup>.
-</figcaption>
-</figure>
 
 ## Semantic HTML in Shiny Applications
 
@@ -61,12 +56,12 @@ Other outputs, such as plots or tables, can be wrapped within one of these <code
 <dd>
 Whilst you can simply add a new paragraph under an image, table, or even a quote, by using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> you can more explicitly link the caption to the component. It might look like they are linked styling several <code>&lt;div&gt;</code>s, but this will let the screen reader better know that the caption is describing the figure.
 
-```
+<code>
 tags$figure(
   # Add inputs here e.g. imageOutput() or DTOutput()
   tags$figcaption("Caption")
 )
-```
+</code>
 </dd>
 <dt>
 &lt;abbr&gt; for abbreviations and acronyms
@@ -80,7 +75,7 @@ Using &lt;h1&gt; to &lt;h6&gt; in hierarchical order
 </dt>
 <dd>
 
-I always fall foul of this particular issue; I will use whichever header tag I like best, whether or not it is in the correct order. [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a great tool to measure website accessibility, and one of the things it checks is that web pages use headers in the correct order to help better structure the page, meaning you shouldn't skip levels just because &lt;h4&gt; looks nicer than &lt;h2&gt;. Instead copy the style of the headers you want to use and assign them to h1, h2 and h3 in a CSS file so that you adhere to this rule.
+I always fall foul of this particular issue; I will use whichever header tag I like best, whether or not it is in the correct order. <a href="https://developers.google.com/web/tools/lighthouse/">Google Lighthouse</a> is a great tool to measure website accessibility, and one of the things it checks is that web pages use headers in the correct order to help better structure the page, meaning you shouldn't skip levels just because &lt;h4&gt; looks nicer than &lt;h2&gt;. Instead copy the style of the headers you want to use and assign them to h1, h2 and h3 in a CSS file so that you adhere to this rule.
 </dd>
 </dl>
 
@@ -107,7 +102,7 @@ These work in a similar fashion to <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;<
 <dd>
 These tags are great for creating a semantic section of inputs within an application. Separate the sections of an input form with <code>&lt;fieldset&gt;</code>s, each with the first element with a legend. These work really nicely as part of `shiny::sidebarPanel` as this wraps all contents within a <code>&lt;form&gt;</code>.
 
-```
+<code>
 tags$form(
   class = "well", # Adds the same styling as shiny::sidebarPanel
   tags$fieldset(
@@ -119,20 +114,28 @@ tags$form(
     # Add inputs here
   )
 )
-```
-
-![Example form using form, fieldset and legend HTML tags](assets/form_tags.jpeg)
+</code>
 </dd>
 </dl>
+
+![Example form using form, fieldset and legend HTML tags](assets/form_tags.jpeg)
 
 For a list of all HTML tags available with definitions and examples, have a look at this [Mozilla Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) article.
 
 <footer>
-
-[1] [US Blindness Statistics](https://nfb.org/blindness-statistics)
-
-[2] [UX Stack Exchange - Percentage of screen readers users in USA?](https://ux.stackexchange.com/a/119596/157481)
-
-[3] The left is full of <code>&lt;div&gt;</code>, the right is using Semantic HTML
-
+<ol>
+<li>
+<a href="https://nfb.org/blindness-statistics">
+US Blindness Statistics
+</a>
+</li>
+<li>
+<a href="https://ux.stackexchange.com/a/119596/157481">
+UX Stack Exchange - Percentage of screen readers users in USA?
+</a>
+</li>
+</li>
+The left is full of <code>&lt;div&gt;</code>, the right is using Semantic HTML
+</li>
+</ol>
 </footer>
