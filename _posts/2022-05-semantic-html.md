@@ -42,6 +42,7 @@ Here are a few simple changes that can be applied to any {shiny} application tha
 When to use &lt;strong&gt; and &lt;em&gt; instead of &lt;b&gt; and &lt;i&gt;
 </dt>
 <dd>
+
 These pairs might look interchangeable in the UI of the web page, however they a screen reader will read both of these differently. Whilst <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> look bold and italicized, the screen reader will pronounce as if it is standard text (and is now recommended to use the `font-weight` style instead of <code>&lt;b&gt;</code>). <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> are recognised by the screen reader and will emphasize accordingly.
 
 Try using screen reader on <b>this</b> sentence and work out which <strong>"this"</strong> is strong and which is b. 
@@ -71,6 +72,7 @@ tags$figure(
 &lt;abbr&gt; for abbreviations and acronyms
 </dt>
 <dd>
+
 Know what either <abbr title="Self-Contained Underwater Breathing Apparatus">SCUBA</abbr> or <abbr title="Completely Automated Public Turing Test to tell Computers and Humans Apart">CAPTCHA</abbr> mean? Me neither, and dashboards can be full of acronyms users might be unaware of. Using <code>tags$abbr(title = "longhand", "abbreviation")</code> will include a tooltip of the longhand of the acronyms, making it easier to keep track of them.
 </dd>
 <dt>
