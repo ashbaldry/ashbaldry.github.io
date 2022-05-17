@@ -130,7 +130,9 @@ For a list of all HTML tags available with definitions and examples, have a look
 <footer>
 
 [1] [US Blindness Statistics](https://nfb.org/blindness-statistics)
+
 [2] [UX Stack Exchange - Percentage of screen readers users in USA?](https://ux.stackexchange.com/a/119596/157481)
+
 [3] The left is full of <code>&lt;div&gt;</code>, the right is using Semantic HTML
 
 </footer>
