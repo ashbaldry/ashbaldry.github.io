@@ -56,10 +56,18 @@ Other outputs, such as plots or tables, can be wrapped within one of these <code
 <dd>
 Whilst you can simply add a new paragraph under an image, table, or even a quote, by using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> you can more explicitly link the caption to the component. It might look like they are linked styling several <code>&lt;div&gt;</code>s, but this will let the screen reader better know that the caption is describing the figure.
 
-    tags$figure(
-      # Add inputs here e.g. imageOutput() or DTOutput()
-      tags$figcaption("Caption")
-    )
+<div class="language-r highlighter-rouge">
+<div class="highlight">
+<pre>
+<code class="highlight">
+tags$figure(
+  # Add inputs here e.g. imageOutput() or DTOutput()
+  tags$figcaption("Caption")
+)
+</code>
+</pre>
+</div>
+</div>
 
 </dd>
 <dt>
@@ -99,19 +107,27 @@ These work in a similar fashion to <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;<
 &lt;form&gt;, &lt;fieldset&gt; and &lt;legend&gt;
 </dt>
 <dd>
-These tags are great for creating a semantic section of inputs within an application. Separate the sections of an input form with <code>&lt;fieldset&gt;</code>s, each with the first element with a legend. These work really nicely as part of `shiny::sidebarPanel` as this wraps all contents within a <code>&lt;form&gt;</code>.
+These tags are great for creating a semantic section of inputs within an application. Separate the sections of an input form with <code>&lt;fieldset&gt;</code>s, each with the first element with a legend. These work really nicely as part of <code>shiny::sidebarPanel</code> as this wraps all contents within a <code>&lt;form&gt;</code>.
 
-    tags$form(
-      class = "well", # Adds the same styling as shiny::sidebarPanel
-      tags$fieldset(
-        tags$legend("Section 1"),
-        # Add inputs here
-      ),
-      tags$fieldset(
-        tags$legend("Section 2")
-        # Add inputs here
-      )
-    )
+<div class="language-r highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+<code>
+tags$form(
+  class = "well", # Adds the same styling as shiny::sidebarPanel
+  tags$fieldset(
+    tags$legend("Section 1"),
+    # Add inputs here
+  ),
+  tags$fieldset(
+    tags$legend("Section 2")
+    # Add inputs here
+  )
+)
+</code>
+</pre>
+</div>
+</div>
 
 </dd>
 </dl>
