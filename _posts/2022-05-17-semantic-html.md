@@ -24,7 +24,7 @@ Trade-offs are bound to occur; the more well known frameworks have been updated 
 
 You don't need to use a classless framework to make it more semantic. Simply by changing the <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags within your existing framework is sometimes enough. Because most styling is attached to the classes rather than the components, changing these tags will not affect the UI but will make the web page more accessible.
 
-![Comparison](assets/semantic_div_comp.jpeg)
+![Comparison](./assets/semantic_div_comp.jpeg)
 
 Both of these UIs are using the same classes, one with <code>&lt;div&gt;</code> elements and the other with Semantic HTML<sup>3</sup>.
 
@@ -56,12 +56,14 @@ Other outputs, such as plots or tables, can be wrapped within one of these <code
 <dd>
 Whilst you can simply add a new paragraph under an image, table, or even a quote, by using <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> you can more explicitly link the caption to the component. It might look like they are linked styling several <code>&lt;div&gt;</code>s, but this will let the screen reader better know that the caption is describing the figure.
 
+<pre>
 <code>
 tags$figure(
   # Add inputs here e.g. imageOutput() or DTOutput()
   tags$figcaption("Caption")
 )
 </code>
+</pre>
 </dd>
 <dt>
 &lt;abbr&gt; for abbreviations and acronyms
@@ -102,6 +104,7 @@ These work in a similar fashion to <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;<
 <dd>
 These tags are great for creating a semantic section of inputs within an application. Separate the sections of an input form with <code>&lt;fieldset&gt;</code>s, each with the first element with a legend. These work really nicely as part of `shiny::sidebarPanel` as this wraps all contents within a <code>&lt;form&gt;</code>.
 
+<pre>
 <code>
 tags$form(
   class = "well", # Adds the same styling as shiny::sidebarPanel
@@ -115,6 +118,7 @@ tags$form(
   )
 )
 </code>
+</pre>
 </dd>
 </dl>
 
@@ -134,7 +138,7 @@ US Blindness Statistics
 UX Stack Exchange - Percentage of screen readers users in USA?
 </a>
 </li>
-</li>
+<li>
 The left is full of <code>&lt;div&gt;</code>, the right is using Semantic HTML
 </li>
 </ol>
