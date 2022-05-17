@@ -27,14 +27,15 @@ full-width: true
     {% for package in site.data.packages %}
     <div class="ui pink card">
       <div class="content">
-        <div class="header">{{ package.name }} {% if package.maintainer != "ashbaldry" %} (Contributor) {% endif %}</div>
+        <div class="header">{{ package.name }}</div>
+        {% if package.maintainer != "ashbaldry" %}
+        <div class="meta">Contributor</div>
+        {% endif %}
         <div class="description">{{ package.description }}</div>
       </div>
       <div class="extra content">
-        <div class="two small buttons">
-          <a class="ui basic black button" href="https://github.com/{{ package.maintainer }}/{{ package.name }}">GitHub</a>
-          <a class="ui basic black button" href="https://{{ package.maintainer }}.github.io/{{ package.name }}">Documentation</a>
-        </div>
+        <a class="ui small basic black button" href="https://github.com/{{ package.maintainer }}/{{ package.name }}">GitHub</a>
+        <a class="ui small basic black button" href="https://{{ package.maintainer }}.github.io/{{ package.name }}">Documentation</a>
       </div>
     </div>
     {% endfor %}

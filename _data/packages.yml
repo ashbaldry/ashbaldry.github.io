@@ -5,7 +5,7 @@
   description: A shiny extension to manipulate the web brower tab title
   maintainer: ashbaldry
 - name: howler
-  description: Wrapper of the [howler.js](https://github.com/goldfire/howler.js) package to enable interactive audio player for shiny applications
+  description: Wrapper of the <a href="https://github.com/goldfire/howler.js">howler.js</a> package to enable interactive audio player for shiny applications
   maintainer: ashbaldry
 - name: shiny.semantic
   description: Shiny support for the Fomantic UI framework
