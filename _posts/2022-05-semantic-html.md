@@ -4,7 +4,7 @@ title: "Semantic HTML and Shiny Applications"
 tags: [rstats, shiny, html]
 ---
 
-A couple of weeks ago I was looking around for different CSS frameworks to play around with, and came across *Semantic HTML* (**not** to be confused with [Semantic UI](https://semantic-ui.com/)) and I'm hooked. There are several "classless CSS frameworks" that are implemented under the ideology of Semantic HTML: styling of elements (e.g. height and colour) is applied to the HTML tags rather than classes, meaning that the HTML is less of a sea of <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags with 6 or 7 classes, and more of a wider range of HTML tags that better explain what is contained in the web page.
+A couple of weeks ago I was looking around for different CSS frameworks to play around with, and came across [*Semantic HTML*](https://blog.hubspot.com/website/semantic-html) (**not** to be confused with [Semantic UI](https://semantic-ui.com/)) and I'm hooked! There are several "classless CSS frameworks" that are implemented under the ideology of Semantic HTML: styling of elements (e.g. height and colour) is applied to the HTML tags rather than classes, meaning that the HTML is less of a sea of <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags with 6 or 7 classes, and more of a wider range of HTML tags that better explain what is contained in the web page.
 
 Some examples include:
 
@@ -16,11 +16,11 @@ Some examples include:
 
 ## Why use Semantic HTML?
 
-One of the key things about making a good UI is to ensure it is accessible as possible. Screen readers don't take any account of JS or CSS within a web page, so having Semantic HTML at least provided a basic level of structure and understanding for all. When over 2% of Americans would benefit from screen readers<sup>[1](https://nfb.org/blindness-statistics),[2](https://ux.stackexchange.com/a/119596/157481)</sup>, this should be considered for any {shiny} application that will be seen by anyone other than yourself.
+One of the key things about making a good UI is to ensure that it is accessible as possible. Screen readers don't take any account of JS or CSS within a web page, so having Semantic HTML at least provided a basic level of structure and understanding for all. When over 2% of Americans would benefit from screen readers<sup>[1](https://nfb.org/blindness-statistics),[2](https://ux.stackexchange.com/a/119596/157481)</sup>, this should be considered for any {shiny} application.
 
-There is also a file size advantage using classless frameworks over the highly used frameworks. For example, the most recent release of Bootstrap (5.1.3) is 161kB (and that doesn't include all of the JavaScript required for components like modals), whereas some of these classless frameworks can be as small as a couple of kilobytes ([Sakura](https://github.com/oxalorg/sakura) is only 4kB and isn't even 200 lines long). The smaller files mean that web pages load quicker and are less prone to unexpected behaviour.
+There is also a file size advantage using classless css over the more commonly seen frameworks. For example, the most recent release of Bootstrap (5.1.3) is 161kB (and that doesn't include all of the JavaScript required for components like modals), whereas some of these classless frameworks can be as small as a couple of kilobytes ([Sakura](https://github.com/oxalorg/sakura) is only 4kB and isn't even 200 lines long). The smaller files mean that web pages load quicker and are less prone to unexpected behaviour.
 
-Trade-offs are bound to occur; these more well known frameworks have been updated and iterated on for years, and include many components and features that won't be available in these classless frameworks, making it much quicker to build an application without writing any extra CSS. They have also been including more accessibility features by using <abbr title="Accessible Rich Internet Applications">ARIA</abbr> attributes (a list of all attributes are available on [Mozilla Web Docs](https://developer.mozilla.org/en-US/docs/web/Accessibility/ARIA/Attributes)), they provide enhanced accessibility compared to Semantic HTML.
+Trade-offs are bound to occur; the more well known frameworks have been updated and iterated for years, and include many components and features that won't be available in these classless frameworks, making it much quicker to build an application without writing any extra CSS. They have also been including more accessibility features by using <abbr title="Accessible Rich Internet Applications">ARIA</abbr> attributes (a list of all attributes are available on [Mozilla Web Docs](https://developer.mozilla.org/en-US/docs/web/Accessibility/ARIA/Attributes)), they provide enhanced accessibility compared to Semantic HTML.
 
 You don't need to use a classless framework to make it more semantic. Simply by changing the <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags within your existing framework is sometimes enough. Because most styling is attached to the classes rather than the components, changing these tags will not affect the UI but will make the web page more accessible.
 
@@ -72,6 +72,12 @@ tags$figure(
 </dt>
 <dd>
 Know what either <abbr title="Self-Contained Underwater Breathing Apparatus">SCUBA</abbr> or <abbr title="Completely Automated Public Turing Test to tell Computers and Humans Apart">CAPTCHA</abbr> mean? Me neither, and dashboards can be full of acronyms users might be unaware of. Using <code>tags$abbr(title = "longhand", "abbreviation")</code> will include a tooltip of the longhand of the acronyms, making it easier to keep track of them.
+</dd>
+<dt>
+Using &lt;h1&gt; to &lt;h6&gt; in hierarchical order
+</dt>
+<dd>
+I always fall foul of this particular issue; I will use whichever header tag I like best, whether or not it is in the correct order. [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a great tool to measure website accessibility, and one of the things it checks is that web pages use headers in the correct order to help better structure the page, meaning you shouldn't skip levels just because &lt;h4&gt; looks nicer than &lt;h2&gt;. Instead copy the style of the headers you want to use and assign them to h1, h2 and h3 in a CSS file so that you adhere to this rule.
 </dd>
 </dl>
 
