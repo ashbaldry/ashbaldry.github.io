@@ -28,14 +28,15 @@ full-width: true
   <div class="ui four stackable centered cards">
     {% for package in site.data.packages %}
     <div class="ui pink card">
+      {% assign maintainer = package.maintainer | default: ashbaldry %}
       <div class="content">
-        <div class="header">{{ package.name }}</div>
+        <div class="header">{{ package.name }} {% if maintainer != "ashbaldry" %} (Contributor) {% endif %}</div>
         <div class="description">{{ package.description }}</div>
       </div>
       <div class="extra content">
         <div class="two buttons>
-          <a class="ui basic black button" href="https://github.com/{{ package.maintainer | ashbaldry }}/{{ package.name }}">GitHub</button>
-          <a class="ui basic black button" href="https://{{ package.maintainer | ashbaldry }}.github.io/{{ package.name }}">Documentation</button>
+          <a class="ui basic black button" href="https://github.com/{{ maintainer }}/{{ package.name }}">GitHub</button>
+          <a class="ui basic black button" href="https://{{ maintainer }}.github.io/{{ package.name }}">Documentation</button>
         </div>
       </div>
     </div>
