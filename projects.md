@@ -4,41 +4,41 @@ title: Projects
 full-width: true
 ---
 
-<h2>Shiny Applications</h2>
-<div class="ui four stackable centered cards">
-  {% for project in site.data.shinyapps %}
-  <div class="ui blue card">
-    <div class="image">
-      <a class="" href="{{ project.url }}" target = "_blank">
-        <img src="/assets/img/shinyapps/{{ project.img }}" />
-      </a>
+<section>
+  <h2>Shiny Applications</h2>
+  <div class="ui four stackable centered cards">
+    {% for project in site.data.shinyapps %}
+    <div class="ui blue card">
+      <div class="image">
+        <a class="" href="{{ project.url }}" target = "_blank">
+          <img src="/assets/img/shinyapps/{{ project.img }}" />
+        </a>
+      </div>
+      <div class="content">
+        <div class="header">{{ project.title }}</div>
+        <div class="description">{{ project.description }}</div>
+      </div>
     </div>
-    <div class="content">
-      <div class="header">{{ project.title }}</div>
-      <div class="description">{{ project.description }}</div>
-    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
+</section>
 
-<h2>Packages</h2>
-
-### `designer`
-
-A shinypackage that enables the ability to create shiny UI code by drag and dropping HTML components within a shiny application \[[GitHub](https://github.com/ashbaldry/designer)\] \[[Documentation](https://ashbaldry.github.io/designer)\]
-
-### `shinytitle`
-
-A shiny extension to manipulate the web brower tab title \[[GitHub](https://github.com/ashbaldry/shinytitle)\] \[[Documentation](https://ashbaldry.github.io/shinytitle)\]
-
-### `howler`
-
-Wrapper of the [howler.js](https://github.com/goldfire/howler.js) package to enable interactive audio player for shiny applications \[[GitHub](https://github.com/ashbaldry/howler)\] \[[Documentation](https://ashbaldry.github.io/howler)\]
-
-### `shiny.semantic` (Contributor)
-
-Shiny support for the Fomantic UI framework \[[GitHub](https://github.com/Appsilon/shiny.semantic)\] \[[Documentation](https://appsilon.github.io/shiny.semantic/)\]
-
-### `appler`
-
-Uses the iTunes Search API to pull data about iTunes and the iOS App Store. \[[GitHub](https://github.com/ashbaldry/appler)\] \[[Documentation](/appler)\]
+<section>
+  <h2>Packages</h2>
+  <div class="ui four stackable centered cards">
+    {% for package in site.data.packages %}
+    <div class="ui pink card">
+      <div class="content">
+        <div class="header">{{ package.name }}</div>
+        <div class="description">{{ package.description }}</div>
+      </div>
+      <div class="extra content">
+        <div class="two buttons>
+          <a class="ui basic black button" href="https://github.com/{{ package.maintainer | ashbaldry }}/{{ package.name }}">GitHub</button>
+          <a class="ui basic black button" href="https://{{ package.maintainer | ashbaldry }}.github.io/{{ package.name }}">Documentation</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
