@@ -1,11 +1,17 @@
 - name: designer
   description: A shiny application that allows the user to wireframe the UI of their own shiny application
   maintainer: ashbaldry
-- name: shinytitle
-  description: A shiny extension to manipulate the web brower tab title
+- name: video
+  description: Wrapper of the <a href="https://github.com/videojs/video.js">video.js</a> package to enable interactive video player for shiny applications
   maintainer: ashbaldry
 - name: howler
   description: Wrapper of the <a href="https://github.com/goldfire/howler.js">howler.js</a> package to enable interactive audio player for shiny applications
+  maintainer: ashbaldry
+- name: shinytitle
+  description: A shiny extension to manipulate the web brower tab title
+  maintainer: ashbaldry
+- name: fomantic.plus
+  description: Extensions to <code>{shiny.semantic}</code> such as navbar layout and form validation
   maintainer: ashbaldry
 - name: shiny.semantic
   description: Shiny support for the Fomantic UI framework
