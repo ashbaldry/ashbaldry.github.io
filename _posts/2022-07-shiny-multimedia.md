@@ -124,7 +124,22 @@ Three of the four audio player inputs are available in the `video` player:
 ### Example
 
 ```r
+library(shiny)
+library(video)
+
+ui <- fluidPage(
+  h1("Video Player"),
+  video("https://vjs.zencdn.net/v/oceans.mp4", width = 600, height = NA)
+)
+
+server <- function(input, output, session) {}
+
+shinyApp(ui, server)
 ```
+
+
+
+If you aren't satisfied with the basic skin of the video.js player, there are a [series of skins available on GitHub](https://github.com/videojs/video.js/wiki/Skins), including one that looks like the Netflix video player.
 
 An added benefit of video.js is that all videos are easily accessible in JavaScript by using `videojs('id')` to find any video by just referencing the ID of the HTML tag (so if there is something currently unavailable in `{video}` you can use this to create your own custom call!).
 
