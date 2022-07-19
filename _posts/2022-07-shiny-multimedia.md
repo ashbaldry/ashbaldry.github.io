@@ -4,19 +4,21 @@ title: "Shiny and Reactive Multimedia"
 tags: [shiny, audio, video]
 ---
 
-Shiny has always been the framework in R for creating dashboards, but as time goes on the potential and use cases for shiny applications are continually increasing. One area that I wanted to explore more was the inclusion of multimedia. This might be an introductionary video, or embedding one of those racing bar charts.
+Shiny has always been the framework for creating dashboards in R, but as time goes on the potential use cases for shiny applications are continuously increasing. One area that I wanted to explore was the inclusion of multimedia. This might be an introductory video, or embedding one of those racing bar charts.
 
 ## Standard HTML Players
 
-Most web browsers come with the capability of understanding what `<audio>` and `<video>` tags, and come with their own functionality, but there are a few issues that one might face when including an audio or video element in their shiny application.
+Most web browsers come with the capability to handle `<audio>` and `<video>` tags, and come with their own functionality, but there are a few issues that one might face when including an audio or video element in their shiny application.
 
 ### Inconsistent UI
 
-Each web browser has their own flavour of styling when it comes to audio and video controls, and whilst working on your application the theme of the browser you are developing on might be cohesive, it might stick out when on another browser.
+Each web browser has their own flavour of styling when it comes to audio and video controls, and whilst working on your application the theme of one browser you are developing on might be cohesive, you may find that the controls "stick out" when on another browser.
 
 #### Audio
 
-`<audio controls src="example.mp3">`
+```html
+<audio controls src="example.mp3">
+```
 
 <section style="display: flex; justify-content: space-around; font-weight: 700;">
 <div>
@@ -39,7 +41,9 @@ Mozilla Firefox
 
 #### Video
 
-`<video controls width="400"><source type="video/mp4" src="example.mp4"></video>`
+```html
+<video width="400" controls><source type="video/mp4" src="example.mp4"></video>
+```
 
 <section style="display: flex; justify-content: space-around; font-weight: 700;">
 
@@ -61,7 +65,7 @@ Mozilla Firefox
 </div>
 </section>
 
-As well the visual differences, there is also some functionality that exists in the Chromium version that isn't present in the Firefox version. Chromium adds the ability to download the track or change the playback speed using the vertical ellipsis.
+Along with the visual differences, there is also some functionality that exists in the Chromium based browsers that isn't present in the Firefox browser. Chromium adds the ability to download the track or change the playback speed using the vertical ellipsis.
 
 The two browsers also calculate the length of tracks differently. In the example video Chromium floors the video duration of 46.6 seconds to 0:46, whereas Firefox rounds up to 0:47.
 
@@ -145,7 +149,7 @@ There are is one difference between Firefox and Chromium, and that is the pictur
 
 ![UI of video.js players in Chrome, Mozilla and Edge, all 3 players have similar UI](/assets/img/blog/shiny-multimedia/video-comparison.png)
 
-If you aren't satisfied with the basic skin of the video.js player, there are a [series of skins available on GitHub](https://github.com/videojs/video.js/wiki/Skins), including one that looks like the Netflix video player.
+If you aren't satisfied with the basic skin of the video.js player, there are a [collection of skins available on GitHub](https://github.com/videojs/video.js/wiki/Skins), including one that looks like the Netflix video player.
 
 An added benefit of video.js is that all videos are easily accessible in JavaScript by using `videojs('id')` to find any video by just referencing the ID of the HTML tag (so if there is something currently unavailable in `{video}` you can use this to create your own custom call!).
 
@@ -169,4 +173,4 @@ It is worth mentioning that both of these packages have been facilitated with [`
 
 Whilst the `<audio>` and `<video>` tags allow easy use of including multimedia in web pages, the use of JavaScript libraries enables a level of consistency across all web browsers plus more flexibility around playing the audio or video track.
 
-`{howler}` and `{video}` are in the process of being submitted to CRAN and hopefully both available in the next few days.
+`{howler}` and `{video}` are in the process of being submitted to CRAN and hopefully both will be available in the next couple of days.
