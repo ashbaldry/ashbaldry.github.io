@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Shiny and Reactive Multimedia"
-tags: [shiny, audio, video]
+tags: [rstats, shiny, audio, video]
 ---
 
 Shiny has always been the framework for creating dashboards in R, but as time goes on the potential use cases for shiny applications are continuously increasing. One area that I wanted to explore was the inclusion of multimedia. This might be an introductory video, or embedding one of those racing bar charts.
