@@ -16,6 +16,8 @@ Each web browser has their own flavour of styling when it comes to audio and vid
 
 #### Audio
 
+`<audio controls src="example.mp3">`
+
 <section style="display: flex; justify-content: space-around; font-weight: 700;">
 <div>
 <div>
@@ -36,6 +38,8 @@ Mozilla Firefox
 </section>
 
 #### Video
+
+`<video controls width="400"><source type="video/mp4" src="example.mp4"></video>`
 
 <section style="display: flex; justify-content: space-around; font-weight: 700;">
 
@@ -63,9 +67,9 @@ The two browsers also calculate the length of tracks differently. In the example
 
 ### Server-Side Interaction
 
-Okay, whilst from the server side you can use `shinyjs::runjs` to tell an audio or video element to play or pause, there is currently little available in the other direction. It might be useful to know whether or not the multimedia is playing, or where in the track the user currently in order to trigger an event.
+Okay, whilst it is possible from the server side to use `shinyjs::runjs` to tell an audio or video element to play or pause, there is currently little available in the other direction. It might be useful to know whether or not the multimedia is playing, or where in the track the user currently is in order to trigger an event.
 
-These, along with a general curiosity of adding multimedia into a shiny application, have brought along the creation of two R packages, based on a couple of separate JavaScript libraries.
+These, along with a general curiosity of adding multimedia into a shiny application, have brought along the creation of two R packages using a couple of JavaScript libraries.
 
 ## Audio with howler.js
 
@@ -109,7 +113,7 @@ shinyApp(ui, server)
 
 This produces the same UI in each of the three main browsers:
 
-![UI of howler modules in Chrome, Mozilla and Edge, all 3 players have identical UI](/assets/img/blog/shiny-multimedia/howler-comparison.png)
+![UI of howler modules in Chrome, Firefox and Edge, all 3 players have identical UI](/assets/img/blog/shiny-multimedia/howler-comparison.png)
 
 ## Video with video.js
 
@@ -137,15 +141,29 @@ server <- function(input, output, session) {}
 shinyApp(ui, server)
 ```
 
+There are is one difference between Firefox and Chromium, and that is the picture-in-picture. The button is visible when hovering on a Firefox browser (similar to the standard video player), but is kept in the controls bar for Chromium. Apart from that, the players are identical.
 
+![UI of video.js players in Chrome, Mozilla and Edge, all 3 players have similar UI](/assets/img/blog/shiny-multimedia/video-comparison.png)
 
 If you aren't satisfied with the basic skin of the video.js player, there are a [series of skins available on GitHub](https://github.com/videojs/video.js/wiki/Skins), including one that looks like the Netflix video player.
 
 An added benefit of video.js is that all videos are easily accessible in JavaScript by using `videojs('id')` to find any video by just referencing the ID of the HTML tag (so if there is something currently unavailable in `{video}` you can use this to create your own custom call!).
 
+## Server-Side
+
+There are a collection of functions available in both packages to manipulate the multimedia from the server in a shiny application:
+
+- `playHowl`/`playVideo` - resume playing the current track*
+- `pauseHowl`/`pauseVideo` - pause the current track
+- `stopHowl`/`stopVideo` - pause and return to the start of the current track
+- `seekHowl`/`seekVideo` - move the current track to a specified point in time
+- `addTrack`/`changeVideo` - change the current track to a new one
+
+Because `{howler}` can handle multiple tracks attached to a player, there is also the potential to change between tracks using `changeTrack` without having to add a new track. 
+
 ## `{htmlwidgets}`
 
-It is worth mentioning that both of these packages have been facilitated with [`{htmlwidgets}`](https://github.com/ramnathv/htmlwidgets), a package that provides an easy way to create R bindings to JavaScript libraries. The [JavaScript for R](https://book.javascript-for-r.com/) book was a great aid in creating widgets for these; it made writing the connections between the UI and server a lot easier ([here](https://github.com/ashbaldry/howler/blob/af886b2d08fb9dd039dd26e0adc2acd6c7175452/inst/srcjs/howler.shiny.js) is what it looked like **before** updating to `{htmlwidgets}`).
+It is worth mentioning that both of these packages have been facilitated with [`{htmlwidgets}`](https://github.com/ramnathv/htmlwidgets), a package that provides an easy way to create R bindings to JavaScript libraries. The [JavaScript for R](https://book.javascript-for-r.com/) book was a great aid in creating widgets for these; it made writing the connections between the UI and server a lot easier ([here](https://github.com/ashbaldry/howler/blob/af886b2d08fb9dd039dd26e0adc2acd6c7175452/inst/srcjs/howler.shiny.js) is what the howler shiny wrapper looked like **before** updating to `{htmlwidgets}`).
 
 ## Summary
 
