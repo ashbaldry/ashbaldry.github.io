@@ -25,17 +25,13 @@ Each web browser has their own flavour of styling when it comes to audio and vid
 <div>
 Chromium (Chrome/Edge)
 </div>
-
-![UI of an audio tag on Chromium web browser](/assets/img/blog/shiny-multimedia/chrome-audio.png)
-
+<img src="/assets/img/blog/shiny-multimedia/chrome-audio.png" alt="UI of an audio tag on Chromium web browser">
 </div>
 <div>
 <div>
 Mozilla Firefox
 </div>
-
-![UI of an audio tag on Mozilla Firefox web browser](/assets/img/blog/shiny-multimedia/mozilla-audio.png)
-
+<img src="/assets/img/blog/shiny-multimedia/mozilla-audio.png" alt="UI of an audio tag on Mozilla Firefox web browser">
 </div>
 </section>
 
@@ -46,23 +42,17 @@ Mozilla Firefox
 ```
 
 <section style="display: flex; justify-content: space-around; font-weight: 700;">
-
 <div>
 <div>
 Chromium (Chrome/Edge)
 </div>
-
-![UI of a video tag on Chromium web browser](/assets/img/blog/shiny-multimedia/chrome-video.png)
-
+<img src="/assets/img/blog/shiny-multimedia/chrome-video.png" alt="UI of an video tag on Chromium web browser">
 </div>
 <div>
 <div>
 Mozilla Firefox
 </div>
-
-![UI of a video tag on Mozilla Firefox web browser](/assets/img/blog/shiny-multimedia/mozilla-video.png)
-
-</div>
+<img src="/assets/img/blog/shiny-multimedia/mozilla-video.png" alt="UI of an video tag on Mozilla Firefox web browser"></div>
 </section>
 
 Along with the visual differences, there is also some functionality that exists in the Chromium based browsers that isn't present in the Firefox browser. Chromium adds the ability to download the track or change the playback speed using the vertical ellipsis.
