@@ -50,7 +50,7 @@ A new page type has been added to the application: the `dashboardPage` from [{bs
 
 Additionally, several components in {bs4Dash} package have been added. This includes the different types of boxes providing an easy way to show high-level values in your application, and callouts and quotes for a fancier way to show blocks of text.
 
-<img src="/assets/img/blog/designer-0-2-0/designer_dashboardPage.jpeg" alt="UI of the designer application, using the dashboardPage from the bs4Dash library, with a box, info box, value box, quote and callout">
+<img src="/assets/img/blog/designer-0-2-0/dashboardPage.jpeg" alt="UI of the designer application, using the dashboardPage from the bs4Dash library, with a box, info box, value box, quote and callout">
 
 **NB** The {bs4Dash} components are only available with the `dashboardPage` as there are styling conflicts when applying these components to standard shiny page types.
 
@@ -60,7 +60,7 @@ When creating applications with standard {shiny} components, you might want to s
 
 There are packages such as [{bslib}](https://rstudio.github.io/bslib/index.html) and [{fresh}](https://dreamrs.github.io/fresh/) that help create CSS files that can dramatically change the look of shiny applications. Once you have a theme you are happy with, save the CSS and upload to the application, and see the wireframe update to your own personal theme.
 
-<img src="/assets/img/blog/designer-0-2-0/dashboardPage_style.jpeg" alt="UI of the designer application, applying a custom style from the fresh package to the dashboard page">
+<img src="/assets/img/blog/designer-0-2-0/dashboardPage_theme.jpeg" alt="UI of the designer application, applying a custom style from the fresh package to the dashboard page">
 
 <figcaption>
 The bs4Dash application with the "lumen" theme.
