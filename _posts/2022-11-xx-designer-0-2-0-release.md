@@ -4,23 +4,25 @@ title: "{designer} 0.2.0: Now with more designing!"
 tags: [rstats, package, shiny, designer]
 ---
 
-I'm really happy to announce the update of the {designer} package! This is the first package that I've created that has warranted such an update, and I'm hoping the new features added will be useful.
+I'm really happy to announce an update of {[designer](https://ashbaldry.github.io/designer/)} is available on CRAN! This is the first package that I've created that has warranted such an update, and the features included will help improve the experience of using the package.
 
 ## What is {designer}?
 
 When coming to write up about this release, I realised that I never made a post about initial release around the {designer} package (just some sporadic posts on the dying bird app), so a quick introduction to the package:
 
-> The [{designer}](ashbaldry.github.io/designer) package is a code-free solution to prototype the UI of shiny applications.
+> The {designer} package is a code-free solution to prototype the UI of shiny applications.
 
-With {designer}, you can create a basic wireframe of the application within minutes, and then provide the R code necessary to reproduce the same UI.
+With {designer}, you can create a basic wireframe of the application within minutes, and then provide the R code necessary to reproduce the same UI. It enables both R and non-R users to come up with a concept of the layout of the UI before passing it to shiny developers to build the logic behind the application. 
 
 ![Example of the designer shiny application creating a basic wireframe with a header, 3 inputs and a plot](https://raw.githubusercontent.com/ashbaldry/designer/main/man/figures/example_app.gif)
 
-So, what has been added to the latest release of the application?
+## User Experience Improvments
 
-### UX
+The most noticeable thing when opening the application is the update to the layout; the components, rather than being a dropdown, have moved to the left of the page. This helps see from the start which components are available for the selected dashboard type, and easily switch between the components when designing.
 
-The most noticeable thing when opening the application is the update to the layout; the components, rather than being a dropdown, have moved to the left of the page. There is also the opportunity to select the page type on start-up. Both have been included to reduce the number of clicks required to start designing you shiny UI.
+There is also the opportunity to select the page type on start-up. Previously you would have to select the page type dropdown and have to select the page that you wanted. Additional text about each page type has been included as it isn't inherently clear what the difference between a "fixed page" and a "fluid page" is.
+
+Both of these have been implemented to also reduce the initial number of clicks required to start designing the application.
 
 <section style="display: flex; justify-content: space-around; font-weight: 700;">
 <div>
@@ -35,26 +37,26 @@ The most noticeable thing when opening the application is the update to the layo
 </div>
 <img src="/assets/img/blog/designer-0-2-0/designer_0_2_0_page.jpeg" alt="UI of the 0.2.0 release of the designer package">
 <figcaption>
-A much more convenient way to start wireframing your application!
+A more convenient way to start wireframing your application!
 </figcaption>
 </div>
 </section>
 
 Another pain point was the deletion of elements, where you had to drag the redundant element to the "bin" at the corner of the page. This is still available, however you can now delete any element (and the children components) simply by right-clicking and clicking the delete option.
 
-### {bs4Dash} Components
+## {bs4Dash} Components
 
-A new page type has been added to the application: the `dashboardPage` available in [{bs4Dash}](https://rinterface.github.io/bs4Dash/index.html). This will help provide an alternative to `navbarPage` for multi-tab applications.
+A new page type has been added to the application: the `dashboardPage` from [{bs4Dash}](https://rinterface.github.io/bs4Dash/index.html). This will help provide an alternative to `navbarPage` for multi-tab applications.
 
-Along with the page type, several components in {bs4Dash} package have been added. These include the box, info box and value box, providing an easy way to show high-level values in your application. 
+Along with the page type, several components in {bs4Dash} package have been added. These include the different types of boxes providing an easy way to show high-level values in your application, and callouts and quotes for a fancier way to show blocks of text.
 
 <img src="/assets/img/blog/designer-0-2-0/designer_dashboardPage.jpeg" alt="UI of the designer application, using the dashboardPage from the bs4Dash library, with a box, info box, value box, quote and callout">
 
-**NB** Please note that the {bs4Dash} components are only available with the `dashboardPage` as there are styling conflicts when applying these components to standard shiny applications.
+**NB** Please note that the {bs4Dash} components are only available with the `dashboardPage` as there are styling conflicts when applying these components to standard shiny page types.
 
-### Custom Styling
+## Custom Styling
 
-When creating applications with standard {shiny} components, you might want to see what it looks like with your company colours, or you just want to not see the standard bootstrap application style. This release includes the ability to upload a custom CSS file that can be applied to the wireframe.
+When creating applications with standard {shiny} components, you might want to see what it looks like with your company colours, or you want the application to not look like every other shiny application. This release includes the ability to upload a custom CSS file that can be applied to the wireframe.
 
 There are packages such as [{bslib}](https://rstudio.github.io/bslib/index.html) and [{fresh}](https://dreamrs.github.io/fresh/) that help create CSS files that can dramatically change the look of shiny applications. Once you have a theme you are happy with, save the CSS and upload to the application, and see the wireframe update to your own personal theme.
 
@@ -64,9 +66,9 @@ There are packages such as [{bslib}](https://rstudio.github.io/bslib/index.html)
 The bs4Dash application with the "lumen" theme.
 </figcaption>
 
-### Sharing Templates
+## Sharing Templates
 
-You can now share wireframes you create using {designer}! If the application is hosted on a server then with one click you can store the state of your most recent wireframe and share with others. Thanks to [Sam Parmer](https://github.com/parmsam) for making it possible to host the application with Docker. This should make it even quicker to produce wireframes in the future.
+You can now share wireframes you create using {designer}! If the application is hosted on a server then with one click you can store the state of your most recent wireframe and share with others (Thanks to [Sam Parmer](https://github.com/parmsam) for making it possible to host the application with Docker). This should make it even quicker to produce wireframes in the future.
 
 <video width="320" height="240" controls>
 <source src="/assets/img/blog/designer-0-2-0/designer_bookmark.mp4" type="video/mp4">
@@ -78,7 +80,7 @@ Saving a wireframe in designer, and then restoring the wireframe in a new tab.
 
 There are a few limitations with how the storing is implemented (such as having to save new bookmarks each time the wireframe is updated), however there are plans to make the process of saving and sharing a lot more seamless.
 
-### Under the Hood
+## Under the Hood
 
 The amount of JavaScript in this application has become unmaintainable in its previous state of sourcing 3 scripts, so the code has been moved into a separate sub-directory. This has enabled the use of the JavaScript library [esbuild](https://esbuild.github.io/) to bundle up all of the code into a single, convenient, minified JavaScript file. Using esbuild has meant in one click all of the JavaScript code has been built, minified, and sent to the "www" folder, and all in under 1 second.
 
