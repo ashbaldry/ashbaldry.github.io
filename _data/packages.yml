@@ -7,6 +7,12 @@
 - name: howler
   description: Wrapper of the <a href="https://github.com/goldfire/howler.js">howler.js</a> package to enable interactive audio player for shiny applications
   maintainer: ashbaldry
+- name: pokeapi
+  desription: API wrappers of <a href="https://pokeapi.co/">PokéAPI</a> to pull information about Pokémon
+  maintainer: ashbaldry
+- name: oranguru
+  description: Pokémon damage calculator and battle simulator
+  maintainer: ashbaldry
 - name: shinytitle
   description: A shiny extension to manipulate the web brower tab title
   maintainer: ashbaldry
