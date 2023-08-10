@@ -4,7 +4,7 @@ title: "Sharing templates with {designer}"
 tags: [rstats, package, shiny, designer]
 ---
 
-With the upcoming release of [{designer}](ashbaldry.github.io/designer/), one of the key features is the ability to saving and sharing templates within the application. By including it as part of the application, rather than having to bookmark specific IDs, it makes it easier to use and maintain multiple wireframes. Rather than using the bookmark directory of the shiny application, a shared directory is created to hold all the templates that can be read by multiple users, allowing multiple people to use and update existing templates.
+With the upcoming release of [{designer}](ashbaldry.github.io/designer/), one of the key features is the ability to save and share templates; by including it as part of the application, this removes the need to bookmark specific IDs, and makes it easier to use and maintain multiple wireframes. Instead of using the bookmark directory of the shiny application, a shared directory is created to hold all the templates that can be read by multiple users, allowing multiple people to use and update existing templates.
 
 <figure>
 <video width="600" height="400" controls>
@@ -12,20 +12,20 @@ With the upcoming release of [{designer}](ashbaldry.github.io/designer/), one of
 </video>
 
 <figcaption>
-Saving a template using the {designer} application, and restoring the template by opening it in another session
+Saving a template using the {designer} application, and restoring the template by opening it in another session.
 </figcaption>
 </figure>
 
 ## Storing Templates with {rappdirs}
 
-[{rappdirs}](https://rappdirs.r-lib.org/) is a convenient package that finds appropriate directories to save data, caches and logs on the major different operating systems. This makes it easy to develop the functionality behind saving templates on my Windows PC, knowing that it will still work when deployed on a Linux server. 
+[{rappdirs}](https://rappdirs.r-lib.org/) is a convenient package that finds appropriate directories to save data, caches and logs, on the major operating systems. This makes it easy to develop the functionality behind saving templates on my Windows PC, knowing that it will still work when deployed on a Linux server. 
 
 There are two levels of caching:
 
-- *Site level* that allows all users on a computer/server to access files
-- *User level* that allows the signed in user to access files
+- *Site level* that allows all users on a computer/server to access files; and
+- *User level* that allows the signed in user to access files.
 
-The application will try to save templates in the site data directory where possible, however there will be instances where permissions have been locked (usually professional environments), and it will fall back to the user level data directory.
+The application will try to save templates in the site data directory where possible, however there will be instances where permissions have been restricted (usually professional environments), and it will fall back to the user level data directory.
 
 Storing data in directories like this is useful in other areas, such as pulling information from APIs. An example of this can be seen in the [{pokeapi}](https://github.com/ashbaldry/pokeapi) package, where the stats of Pokémon are unlikely to change from a day to day basis. Using this cache reduces the number of API calls required when re-running the same chunk of code over and over again.
 
@@ -36,7 +36,7 @@ A list of all the templates currently saved in my local version of the {designer
 </figcaption>
 </figure>
 
-The `index.csv` collects metadata about the template, including the title, description and creator, and stores this alongside the ID the template is stored in. Currently only the HTML of the template is included in the folders, future updates will allow files such as screenshots to be included.
+The `index.csv` collects template metadata, including the title, description and creator, and stores this alongside the ID the template is stored in. Currently only the HTML of the template is included in the folders, future updates will allow files such as screenshots to be included.
 
 ### `R_DESIGNER_CACHE`
 
@@ -44,7 +44,7 @@ For those that want these templates stored somewhere like a shared drive, the `R
 
 ## Deployment
 
-The aim of these templates are to make it easy to collaborate and share templates with others. In order to make this as accessible as possible, there are two built-in ways to deploy the {designer} application:
+The {designer} app needs to be hosted on a server, otherwise the templates will be unable to be shared with others. In order to make this as accessible as possible, there are two built-in ways to deploy the {designer} application:
 
 ### Docker
 
