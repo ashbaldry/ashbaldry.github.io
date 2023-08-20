@@ -63,6 +63,6 @@ As part of the 0.3.0 release, a manifest.json file has been added to allow the a
 }
 </style>
 
-## Template Screenshots
+#### Template Screenshots
 
 One feature that is currently missing from these templates is providing a useful screenshot in the available templates dropdown, or generating a modal to show a catalogue of these screenshots. I have tried using [{shinyscreenshot}](https://github.com/daattali/shinyscreenshot) to capture the template and storing it with the relevant HTML. *However* it takes several seconds to capture this, and sometimes causes the app to sometimes crash. I have some ideas as to why it is happening (removing the component options from the UI makes the screenshot happen almost instantly), but I cannot find a way to fix this. If anyone knows their way around screenshotting applications, having this available in a future release would be a great addition.
