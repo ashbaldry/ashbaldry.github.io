@@ -4,7 +4,7 @@ title: "Sharing templates with {designer}"
 tags: [rstats, package, shiny, designer]
 ---
 
-With the upcoming release of [{designer}](ashbaldry.github.io/designer/), one of the key features is the ability to save and share templates; by including it as part of the application, this removes the need to bookmark specific IDs, and makes it easier to use and maintain multiple wireframes. Instead of using the bookmark directory of the shiny application, a shared directory is created to hold all the templates that can be read by multiple users, allowing multiple people to use and update existing templates.
+With the upcoming release of [{designer}](https://ashbaldry.github.io/designer/), one of the key features is the ability to save and share templates; by including it as part of the application, this removes the need to bookmark specific IDs, and makes it easier to use and maintain multiple wireframes. Instead of using the bookmark directory of the shiny application, a shared directory is created to hold all the templates that can be read by multiple users, allowing multiple people to use and update existing templates.
 
 <figure>
 <video width="600" height="400" controls>
