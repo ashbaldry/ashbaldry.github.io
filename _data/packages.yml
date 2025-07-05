@@ -1,20 +1,20 @@
 - name: designer
-  description: A shiny application that allows the user to wireframe the UI of their own shiny application
+  description: A Shiny application that allows the user to wireframe the UI of their own shiny application
   maintainer: ashbaldry
 - name: video
-  description: Wrapper of the <a href="https://github.com/videojs/video.js">video.js</a> package to enable interactive video player for shiny applications
+  description: Wrapper of the <a href="https://github.com/videojs/video.js">video.js</a> package to enable interactive video player for Shiny applications
   maintainer: ashbaldry
 - name: howler
-  description: Wrapper of the <a href="https://github.com/goldfire/howler.js">howler.js</a> package to enable interactive audio player for shiny applications
+  description: Wrapper of the <a href="https://github.com/goldfire/howler.js">howler.js</a> package to enable interactive audio player for Shiny applications
   maintainer: ashbaldry
-- name: pokeapi
-  description: API wrappers of <a href="https://pokeapi.co/">PokéAPI</a> to pull information about Pokémon
+- name: shiny.destroy
+  description: A Shiny extension that remove all trace of dynamic inputs and outputs from a Shiny session
   maintainer: ashbaldry
-- name: oranguru
-  description: Pokémon damage calculator and battle simulator
+- name: shinytesters
+  description: Enabler to update input values whilst running <code>shiny::testServer</code>
   maintainer: ashbaldry
 - name: shinytitle
-  description: A shiny extension to manipulate the web brower tab title
+  description: A Shiny extension to manipulate the web brower tab title
   maintainer: ashbaldry
 - name: fomantic.plus
   description: Extensions to <code>{shiny.semantic}</code> such as navbar layout and form validation
@@ -24,4 +24,10 @@
   maintainer: appsilon
 - name: appler
   description: Uses the iTunes Search API to pull data about iTunes and the iOS App Store
+  maintainer: ashbaldry
+- name: pokeapi
+  description: API wrappers of <a href="https://pokeapi.co/">PokéAPI</a> to pull information about Pokémon
+  maintainer: ashbaldry
+- name: oranguru
+  description: Pokémon damage calculator and battle simulator
   maintainer: ashbaldry
